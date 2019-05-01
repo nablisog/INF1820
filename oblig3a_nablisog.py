@@ -6,8 +6,7 @@ btags = nltk.FreqDist(tag for (word, tag) in brown.tagged_words())
 print (btags.tabulate (10))
 print (bwords.tabulate (10))
 
-from nltk.corpus import brown
-import nltk
+
 cfd = nltk.ConditionalFreqDist(brown.tagged_words())
 tags = brown.tagged_words()
 pos_tags = [val for key, val in tags]
@@ -43,8 +42,7 @@ for word, pos in brown.tagged_words():
 print ("the word linguist is occured %d times" % c)
 
 #finding most frequent adjective
-import nltk
-from nltk.corpus import brown
+
 brown =nltk.corpus.brown.tagged_words(categories="news")
 adjectives = []
 for w, t in brown:
@@ -53,8 +51,7 @@ for w, t in brown:
       nfd= nltk.FreqDist(adjectives)
       print (nfd.most_common(5))
       
-import nltk
-from nltk.corpus import brown
+
 brown = nltk.corpus.brown.tagged_words()
 brown = sorted([(word.lower(), tags) for word, tags in brown])
 tags = [tag for (word,tag) in brown]
@@ -82,7 +79,7 @@ for tag in sorted(after, key=lambda i: int(after[i]), reverse=True):
 # b's reading is more likely than a 
     
 
-import nltk
+
 from nltk.chunk import RegexpParser
 chunker = RegexpParser(r'''
                     NP:
@@ -134,7 +131,7 @@ RegexpChunkParser with 4 rules:
   with/IN
   (NP the/DT fish/NN))
   '''
-import nltk
+
 from nltk.corpus import conll2000
 grammar = "NP: {<DT>?<JJ>*<NN>}"
 cp = nltk.RegexpParser(grammar)
